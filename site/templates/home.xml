@@ -5,11 +5,121 @@
 	<html lang="$language" cms:eval="lang">
 		<head>
 			<title><cms:text constant="site_title"/></title>
+			<cms:collection include="page_control,animation_chain"/>
+			<cms:raw file="/parts/scripts.txt"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
-			<h1>It works!</h1>
+			<header>
+				<cms:desktop>
+					<div class="wrap">
+						<div id="main">
+							<cms:module
+								name="articles"
+								action="show"
+								text_id="header_text"
+							/>
+							<a
+								href="'tel:'.urlencode(Language::getText('phone'))"
+								cms:eval="href"
+								class="phone"
+								>
+								<cms:text constant="phone"/>
+							</a>
+							<img
+								src="../site/images/flag.png"
+								alt="flag"
+								id="flag"
+							/>
+						</div>
+					</div>
+					<div id="form">
+						<span class="top">
+							<cms:text constant="fill_form"/>
+						</span>
+						<cms:module
+							name="contact_form"
+							action="show"
+							text_id="contact_form"
+							/>
+					</div>
+				</cms:desktop>
+				<cms:mobile>
+					<div id="main">
+						<cms:module
+							name="articles"
+							action="show"
+							text_id="header_text_mobile"
+						/>
+						<span>
+							<cms:text constant="call_now"/>
+						</span>
+						<a
+							href="'tel:'.urlencode(Language::getText('phone'))"
+							cms:eval="href"
+							class="phone"
+							>
+							<cms:text constant="phone"/>
+						</a>
+					</div>
+				</cms:mobile>
+			</header>
+			<div id="secondary">
+				<cms:desktop>
+					<div class="wrap">
+						<cms:module
+							name="articles"
+							action="show"
+							text_id="sitonaoot"
+							template="parts/article_no_title.xml"
+						/>
+						<div id="gallery">
+							<cms:module
+								name="gallery"
+								action="show_image_list"
+								template="parts/gallery.xml"
+								/>
+						</div>
+					</div>
+				</cms:desktop>
+				<cms:mobile>
+					<cms:module
+						name="articles"
+						action="show"
+						text_id="sitonaoot_mobile"
+						template="parts/article_no_title.xml"
+					/>
+					<cms:module
+						name="articles"
+						action="show"
+						text_id="sitonaoot"
+						template="parts/article_no_title.xml"
+					/>
+					<div id="form">
+						<span class="top">
+							<cms:text constant="fill_form"/>
+						</span>
+						<cms:module
+							name="contact_form"
+							action="show"
+							text_id="contact_form"
+							/>
+					</div>
+					<div id="gallery">
+						<cms:module
+							name="gallery"
+							action="show_image_list"
+							template="parts/gallery.xml"
+							/>
+					</div>
+				</cms:mobile>
+			</div>
+			<footer>
+				<p>
+					<cms:text constant="copyright"/>
+				</p>
+			</footer>
 		</body>
 	</html>
 </document>

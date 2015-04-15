@@ -49,6 +49,13 @@ Site.is_mobile = function() {
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
+	var lightbox = new LightBox(('a.image'), false, false, true);
+
+	// handle analytics event
+	$('form').on('analytics-event', function(event, data) {
+		if (!data.error)
+			ga('send', 'event', 'Form', 'Lead');
+	});
 };
 
 

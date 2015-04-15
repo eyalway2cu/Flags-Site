@@ -17,8 +17,8 @@ define('DEBUG', 1);
 // define('SQL_DEBUG', 1);
 
 // site language configuration
-$available_languages = array('en');
-$default_language = 'en';
+$available_languages = array('he');
+$default_language = 'he';
 
 // default session options
 $session_type = Session::TYPE_BROWSER;
@@ -28,14 +28,14 @@ $db_use = true;
 $db_type = DatabaseType::MYSQL;
 $db_config = array(
 		'host' => 'localhost',
-		'user' => 'root',
-		'pass' => 'caracal',
-		'name' => 'web_engine'
+		'user' => 'flagman',
+		'pass' => 'wNhp03@3',
+		'name' => 'flagman'
 	);
 
 // configure code generation
 $cache_method = CacheType::NONE;
-$optimize_code = false;
+$optimize_code = true;
 $url_rewrite = true;
 
 ?>

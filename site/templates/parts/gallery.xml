@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/template.dtd">
+<document>
+	<a
+	href="$params['image']"
+	class="image direct"
+	cms:eval="href"
+	>
+		<img
+			src="gallery::getThumbnailById($params['id'], null, 330, Thumbnail::CONSTRAIN_HEIGHT)"
+			alt="$params['title'][$language]"
+			cms:eval="src,alt"
+		/>
+	</a>
+</document>

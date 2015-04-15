@@ -3,10 +3,13 @@
  * Site Name
  *
  * Copyright (c) 2015. by Way2CU, http://way2cu.com
- * Authors:
+ * Authors: Eyal Gershon
  */
 
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+
 body {
+	font-family: 'Open Sans Hebrew', serif;
 	background-color: white;
 	color: black;
 }
